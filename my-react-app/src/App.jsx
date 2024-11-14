@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Student from './Student'; 
+import Student from './students'; 
 import profileImage from './assets/profile_pic1.jpg'; 
 
 function App() {
