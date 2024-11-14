@@ -1,0 +1,65 @@
+[
+  {
+    "name": "John Doe",
+    "position": "Software Engineer",
+    "email": "john.doe@example.com",
+    "phone": "(123) 456-7890",
+    "website": "www.johndoe.com"
+  },
+  {
+    "name": "Jane Smith",
+    "position": "Product Manager",
+    "email": "jane.smith@example.com",
+    "phone": "(234) 567-8901",
+    "website": "www.janesmith.com"
+  },
+  {
+    "name": "Mike Johnson",
+    "position": "UI/UX Designer",
+    "email": "mike.johnson@example.com",
+    "phone": "(345) 678-9012",
+    "website": "www.mikejohnson.com"
+  },
+  {
+    "name": "Emily Brown",
+    "position": "Data Scientist",
+    "email": "emily.brown@example.com",
+    "phone": "(456) 789-0123",
+    "website": "www.emilybrown.com"
+  },
+  {
+    "name": "Chris White",
+    "position": "DevOps Engineer",
+    "email": "chris.white@example.com",
+    "phone": "(567) 890-1234",
+    "website": "www.chriswhite.com"
+  },
+  {
+    "name": "Lisa Black",
+    "position": "Marketing Specialist",
+    "email": "lisa.black@example.com",
+    "phone": "(678) 901-2345",
+    "website": "www.lisablack.com"
+  },
+  {
+    "name": "Tom Green",
+    "position": "Sales Executive",
+    "email": "tom.green@example.com",
+    "phone": "(789) 012-3456",
+    "website": "www.tomgreen.com"
+  },
+  {
+    "name": "Sara Blue",
+    "position": "Content Writer",
+    "email": "sara.blue@example.com",
+    "phone": "(890) 123-4567",
+    "website": "www.sarablue.com"
+  },
+  {
+    "name": "David Orange",
+    "position": "Business Analyst",
+    "email": "david.orange@example.com",
+    "phone": "(901) 234-5678",
+    "website": "www.davidorange.com"
+  }
+]
