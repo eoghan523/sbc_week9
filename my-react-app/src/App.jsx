@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Student from './students';
-
+import { useState } from 'react';
+import './App.css';
+import Student from './Student'; 
+import profileImage from './assets/profile_pic1.jpg'; 
 
 function App() {
- 
+
   const students = [
     { name: "Eoghan", age: 30 },
     { name: "Leo", age: 28 },
@@ -19,9 +17,13 @@ function App() {
     <div>
       <h1>Student List</h1>
       <ul>
-      
         {students.map((student, index) => (
-          <Student key={index} name={student.name} age={student.age} />
+          <Student 
+            key={index} 
+            name={student.name} 
+            age={student.age} 
+            image={profileImage} 
+          />
         ))}
       </ul>
     </div>
