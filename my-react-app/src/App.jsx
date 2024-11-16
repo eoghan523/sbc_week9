@@ -1,75 +1,26 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+// App.js
+import { useState } from 'react';
+import Layout from './components/Layout'; //Import Layout from components folder layout.jsx
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
-  const [maxLength, setMaxLength] = useState(10);
-  const [catFacts, setCatFacts] = useState([]);
-  const [error, setError] = useState(null);
 
-  // Handles input changes
-  const handleChange = (e) => {
-    setMaxLength(e.target.value);
-  };
+  const [page, setPage] = useState('home');  // The useState hook is initialized with a default value of 'home'
 
-  // Handles search click to get status info
-  const handleSearch = async () => {
+  // TODO: How doe sthe Layout component know which page to render?
 
-    console.log(maxLength);
-    
-    if (!maxLength) {
-      setError("Please enter a Maximum Length.");
-      return;
-    }
-    setError(null); // Clear previous error
-    try {
-      const response = await axios.get(`https://catfact.ninja/facts?limit=${maxLength}`);
-      
-      // destructure the data from the response
-      const { data } = response.data
-      console.log(response.data);
-
-      setCatFacts(data);
-    } catch (err) {
-      setError("Could not retrieve information. Please check the status code.");
-      setStatusInfo(null);
-    }
-  };
-
+  // Pass the 'setPage' function as the 'onSetPage' prop to Layout 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
-      <h1>Cat Facts</h1>
-      <input
-        type="number"
-        placeholder="Enter the number of cat facts you'd like"
-        value={maxLength}
-        onChange={handleChange}
-        style={{ padding: '8px', width: '100%' }}
-      />
-      <button onClick={handleSearch} style={{ padding: '10px', marginTop: '10px', width: '100%' }}>
-        Search
-      </button>
+    <Layout selectedPage={page} onSetPage={setPage}>       
 
-        { /* TODO: Display error message if there is an error */}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-
-        { /* TODO: Display facts if it exists */}
-        {catFacts.length > 0 && (
-        <div style={{ marginTop: '20px' }}>
-          <h2>Here are {catFacts.length} Cat Facts</h2>
-          <ul>
-            {catFacts.map((fact, index) => (
-              <li key={index}>{fact.fact}</li>
-            ))}
-          </ul>
-        </div>
-        )}
-        { /* TODO: If there are no facts, display "no facts to display" */}
-        {catFacts.length === 0 && !error && (
-        <p>No facts to display</p>
-      )}
-        
+      {page === 'home' && <HomePage />}
       
-    </div>
+      {page === 'about' && <AboutPage />}
+      {page === 'contact' && <ContactPage />}
+
+    </Layout>
   );
 }
 
